@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+<style>
+form {
+    margin: auto;
+    width: 35%;
+}
+.result {
+    margin: auto;
+    width: 35%;
+    border: 1px solid #ccc;
+}
+</style>
+<head>
+    <title>Chat-bot-cv</title>
+</head>
+<form action="{{ url_for('index') }}" method="POST">
+    <fieldset>
+
+        Chat:
+        <input name="sentence" type="text" required>
+        <br>
+        <input type="submit">
+    </fieldset>
+</form>
+<br>
+<div class="result" align="center">
+    {% if result %}
+        <br> Giorgos:
+           <p style="font-size:15px">{{ result }}</p>
+    {% else %}
+        <br> Giorgos:
+           <p style="font-size:15px">{{ "Hello!" }}</p>
+    {% endif %}
+</div>
+</html>
