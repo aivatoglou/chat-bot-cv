@@ -1,0 +1,4 @@
+-f https://download.pytorch.org/whl/torch_stable.html
+nltk==3.4.5
+numpy==1.17.4
+torch==1.6.0+cpu
