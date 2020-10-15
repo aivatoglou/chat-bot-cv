@@ -5,6 +5,9 @@ import torch.nn as nn
 from nltk.stem.porter import PorterStemmer
 import numpy as np
 import nltk
+import flask
+
+app = flask.Flask(__name__)
 
 class ChatNet(nn.Module):
     def __init__(self, input_size, hidden_size1, hidden_size2, num_classes):
@@ -62,27 +65,31 @@ model.eval()
 
 bot_name = "Giorgos"
 print("Let's chat! (type 'quit' to exit)")
-while True:
 
-    sentence = input("You: ")
-    if sentence == "quit":
-        break
+@app.route("/")
+def index():
 
-    sentence = tokenize(sentence)
-    X = bag_of_words(sentence, all_words)
-    X = X.reshape(1, X.shape[0])
-    X = torch.from_numpy(X)
+	while True:
 
-    output = model(X)
-    _, predicted = torch.max(output, dim=1)
+	    sentence = input("You: ")
+	    if sentence == "quit":
+	        break
 
-    tag = tags[predicted.item()]
+	    sentence = tokenize(sentence)
+	    X = bag_of_words(sentence, all_words)
+	    X = X.reshape(1, X.shape[0])
+	    X = torch.from_numpy(X)
 
-    probs = torch.softmax(output, dim=1)
-    prob = probs[0][predicted.item()]
-    if prob.item() > 0.75:
-        for intent in intents['intents']:
-            if tag == intent["tag"]:
-                print(f"{bot_name}: {random.choice(intent['responses'])}")
-    else:
-        print(f"{bot_name}: I do not understand...")
+	    output = model(X)
+	    _, predicted = torch.max(output, dim=1)
+
+	    tag = tags[predicted.item()]
+
+	    probs = torch.softmax(output, dim=1)
+	    prob = probs[0][predicted.item()]
+	    if prob.item() > 0.75:
+	        for intent in intents['intents']:
+	            if tag == intent["tag"]:
+	                return(f"{bot_name}: {random.choice(intent['responses'])}")
+	    else:
+	        return(f"{bot_name}: I do not understand...")
