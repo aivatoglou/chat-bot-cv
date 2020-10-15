@@ -1,10 +1,46 @@
 import random
 import json
 import torch
-from model import ChatNet
-from nltk_utils import bag_of_words, tokenize
+import torch.nn as nn
+from nltk.stem.porter import PorterStemmer
+import numpy as np
+import nltk
 
-#device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+class ChatNet(nn.Module):
+    def __init__(self, input_size, hidden_size1, hidden_size2, num_classes):
+        super(ChatNet, self).__init__()
+        self.l1 = nn.Linear(input_size, hidden_size1) 
+        self.l2 = nn.Linear(hidden_size1, hidden_size1) 
+        self.l3 = nn.Linear(hidden_size1, hidden_size2)
+        self.l4 = nn.Linear(hidden_size2, num_classes)
+        self.relu = nn.ReLU()
+    
+    def forward(self, x):
+        out = self.l1(x)
+        out = self.relu(out)
+        out = self.l2(out)
+        out = self.relu(out)
+        out = self.l3(out)
+        out = self.relu(out)
+        out = self.l4(out)
+        # no activation and no softmax at the end
+        return out
+
+def tokenize(sentence):
+    return nltk.word_tokenize(sentence)
+
+def stem(word):
+    return stemmer.stem(word.lower())
+
+def bag_of_words(tokenized_sentence, words):
+    sentence_words = [stem(word) for word in tokenized_sentence]
+    bag = np.zeros(len(words), dtype=np.float32)
+    for idx, w in enumerate(words):
+        if w in sentence_words: 
+            bag[idx] = 1
+    return bag
+
+stemmer = PorterStemmer()
 
 with open('intents.json', 'r') as json_data:
     intents = json.load(json_data)
@@ -20,7 +56,7 @@ all_words = data['all_words']
 tags = data['tags']
 model_state = data["model_state"]
 
-model = ChatNet(input_size, hidden_size1, hidden_size2, output_size).to(device)
+model = ChatNet(input_size, hidden_size1, hidden_size2, output_size)
 model.load_state_dict(model_state)
 model.eval()
 
@@ -35,7 +71,7 @@ while True:
     sentence = tokenize(sentence)
     X = bag_of_words(sentence, all_words)
     X = X.reshape(1, X.shape[0])
-    X = torch.from_numpy(X).to(device)
+    X = torch.from_numpy(X)
 
     output = model(X)
     _, predicted = torch.max(output, dim=1)
