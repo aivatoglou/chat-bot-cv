@@ -2,7 +2,7 @@
   "intents": [
     {
       "tag": "personal",
-      "patterns": ["What is your name?", "How you are called?", "Tell me your name"],
+      "patterns": ["What is your name?", "How you are called?", "Tell me your name", "What is your first name?", "What is your last name?"],
       "responses": ["My name is Giorgos Aivatoglou."]
     },
     {
@@ -12,17 +12,17 @@
     },
     {
       "tag": "goodbye",
-      "patterns": ["Bye", "See you soon", "Goodbye"],
+      "patterns": ["Bye", "See you soon", "Goodbye", "Good night!", "Talk to you later!", "Ciao"],
       "responses": ["See you later, thanks for visiting!", "Have a nice day", "Bye! Come back again soon."]
     },
     {
       "tag": "thanks",
-      "patterns": ["Thanks", "Thank you", "Thank's a lot!"],
+      "patterns": ["Thanks", "Thank you", "Thank's a lot!", "Thank you very much"],
       "responses": ["My pleasure."]
     },
     {
       "tag": "education",
-      "patterns": ["Tell me about your education", "What is your education?", "University"],
+      "patterns": ["Tell me about your education", "What is your education?", "University", "College", "School", "Where did you graduate?", "Graduation university", "Bachelor degree", "Master degree"],
       "responses": ["I'm an Electrical and Computer Engineer with a MSc on Artificial Intelligence."]
     },
     {
@@ -39,6 +39,11 @@
       "tag": "location",
       "patterns": ["What is your location?", "Where do you live?", "Where are you?"],
       "responses": ["I currently live in Thessaloniki, Greece."]
+    },
+    {
+      "tag": "email",
+      "patterns": ["What is your email address?"],
+      "responses": ["aivagiorgos@gmail.com"]
     }
   ]
 }

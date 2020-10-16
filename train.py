@@ -43,7 +43,7 @@ def bag_of_words(tokenized_sentence, words):
 
 stemmer = PorterStemmer()
 
-with open('chat-bot-cv/intents.json', 'r') as f:
+with open('intents.json', 'r') as f:
     intents = json.load(f)
 
 all_words = []
