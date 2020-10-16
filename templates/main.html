@@ -1,44 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
-<style>
-@import url('https://fonts.googleapis.com/css?family=Roboto');
-body{
-    margin: 0;
-    padding: 0;
-    font-family: 'Roboto', sans-serif;
-    background-color: #101214;
-    color: #7A7C80;
-}
-form {
-    margin: auto;
-    width: 25%;
-}
-.result {
-    margin: auto;
-    width: 25%;
-}
-fieldset {
-    border: 0;
-    text-align:center;
-}
-</style>
-<head>
-    <title>Giorgos Aivatoglou</title>
-</head>
-<form action="{{ url_for('index') }}" method="POST">
-    <fieldset>
-        Chat
-        <input name="sentence" type="text" required>
-        <input type="submit">
-    </fieldset>
-</form>
-<div class="result" align="center">
-    {% if result %}
-        <br> Giorgos:
-           <p style="font-size:15px; color:White;">{{ result }}</p>
-    {% else %}
-        <br> Giorgos:
-           <p style="font-size:15px; color:WHite">{{ "Hello!" }}</p>
-    {% endif %}
-</div>
+	<style>
+		@import url('https://fonts.googleapis.com/css?family=Roboto');
+		body{
+	    	margin: 0;
+	    	padding: 0;
+	    	font-family: 'Roboto', sans-serif;
+	    	background-color: #101214;
+	    	color: #7A7C80;
+		}
+		.result {
+	    	justify-content: center;
+	    	flex-direction: column;
+		}
+		fieldset {
+		    border: 0;
+	    	text-align:center;
+	       	padding-top: 40vh;
+    		text-align: center;
+		}
+		#ip2 {
+    		border-radius: 18px;
+    		padding: 10px; 
+    		width: 200px;
+    		height: 5px;
+    	}
+
+	</style>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	    <title>Giorgos Aivatoglou</title>
+	</head>
+
+	<body>
+		<div class="result" align="center">
+			<form action="{{ url_for('index') }}" method="POST">
+	    		<fieldset>
+	        		<p>Chat</p>
+	        		<input name="sentence" type="text" required  id="ip2">
+	        		<br>
+	        		<br>
+	        		<input type="submit">
+	    		</fieldset>
+			</form>
+
+	    	{% if result %}
+	        	<br> Giorgos:
+	           		<p style="font-size:15px; color:White;">{{ result }}</p>
+	    	{% else %}
+	        	<br> Giorgos:
+	           		<p style="font-size:15px; color:WHite">{{ "Hello!" }}</p>
+	    	{% endif %}
+		</div>
+	</body>
 </html>
