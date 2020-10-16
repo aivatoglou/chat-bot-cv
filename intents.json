@@ -2,13 +2,13 @@
   "intents": [
     {
       "tag": "personal",
-      "patterns": ["What's your name?", "Where do you live?"],
-      "responses": ["My name is Giorgos Aivatoglou and I currently live in Thessaloniki, Greece."]
+      "patterns": ["What is your name?", "How you are called?", "Tell me your name"],
+      "responses": ["My name is Giorgos Aivatoglou."]
     },
     {
       "tag": "greeting",
-      "patterns": ["Hi", "Hey", "Hello", "Is anyone there?"],
-      "responses": ["Hey!", "Hello, thanks for visiting!"]
+      "patterns": ["Hi", "Hey", "Hello", "Is anyone there?", "Greetings", "What's up", "Sup", "Hello there", "Hi there", "Hey there"],
+      "responses": ["Hey!", "Hello, thanks for visiting!", "Hi!"]
     },
     {
       "tag": "goodbye",
@@ -18,22 +18,27 @@
     {
       "tag": "thanks",
       "patterns": ["Thanks", "Thank you", "Thank's a lot!"],
-      "responses": ["My pleasure"]
+      "responses": ["My pleasure."]
     },
     {
       "tag": "education",
-      "patterns": ["Tell me about your education", "What's your education?", "What's your expetise?", "University"],
+      "patterns": ["Tell me about your education", "What is your education?", "University"],
       "responses": ["I'm an Electrical and Computer Engineer with a MSc on Artificial Intelligence."]
     },
     {
       "tag": "work",
       "patterns": ["Where do you work?", "What do you do for a living?"],
-      "responses": ["Currently I'm working at CERTH as a research software engineer!"]
+      "responses": ["Currently I'm working at CERTH as a research software engineer."]
     },
     {
       "tag": "interests",
-      "patterns": ["What's your interests?", "What's your expertise?"],
+      "patterns": ["What are your interests?", "What is your expertise?", "What are your favorite subjects?"],
       "responses": ["Machine Learning and Data Science!"]
+    },
+    {
+      "tag": "location",
+      "patterns": ["What is your location?", "Where do you live?", "Where are you?"],
+      "responses": ["I currently live in Thessaloniki, Greece."]
     }
   ]
 }

@@ -73,7 +73,7 @@ def index():
 
 	if flask.request.method == 'GET':
 
-		return(flask.render_template('main.html'))
+		return(flask.render_template('main.html', original_input="Giorgos", result="Hello!"))
 
 
 	if flask.request.method == 'POST':
@@ -101,4 +101,5 @@ def index():
 			return(flask.render_template('main.html', original_input="Giorgos", result="I don't understand..."))
 
 if __name__ == '__main__':
+
 	app.run(host='0.0.0.0', port=port)
