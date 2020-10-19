@@ -1,60 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
-	<style>
-		@import url('https://fonts.googleapis.com/css?family=Roboto');
-		body{
-	    	margin: 0;
-	    	padding: 0;
-	    	font-family: 'Roboto', sans-serif;
-	    	background-color: #101214;
-	    	color: #7A7C80;
-		}
-		.result {
-	    	justify-content: center;
-	    	flex-direction: column;
-		}
-		fieldset {
-		    border: 0;
-	    	text-align:center;
-	       	padding-top: 40vh;
-    		text-align: center;
-		}
-		#ip2 {
-    		border-radius: 18px;
-    		padding: 10px; 
-    		width: 200px;
-    		height: 5px;
-    	}
+	<div class="flex">
+		<style>
+			@import url('https://fonts.googleapis.com/css?family=Roboto');
+			body{
+				margin: 0;
+				padding: 0;
+				font-family: 'Roboto', sans-serif;
+				background-color: #101214;
+				color: #fff;
+			}
+			.result {
+				justify-content: center;
+				flex-direction: column;
+				font-size: 36px;
+				color: #fff;
+			}
+			fieldset {
+				border: 0;
+				text-align:center;
+				padding-top: 40vh;
+				text-align: center;
+				display: inline-block;
+			}
+			#ip2 {
+				color: #fff;
+				padding: 20px;
+				font-size: 26px;
+				background: transparent;
+				border: 0;
+			}
+			#ip2:focus {
+				outline: : 0;
+				outline-offset: 0;
+			}
+			h1 {
+			  font-size: 40px;
+			  font-weight: 600;
+			  border: 3px solid #fff;
+			  padding: 10px 20px;
+			  margin-bottom: 40px;
+			}
+			.flex {
+			  display: flex;
+			  justify-content: center;
+			  flex-flow: column;
+			  align-items: center;
+			}
+			input {
+				outline:none;
+			}
+			p {
+				border-right: solid 3px rgba(0,255,0,.75);
+				white-space: nowrap;
+				overflow: hidden;
+			}
+			p {
+				animation: animated-text 4s 1s 1 normal both, /*steps(35,end) */
+				animated-cursor 600ms infinite; /*steps(35,end) */
+			}
+			@keyframes animated-text{
+				from { width: 0%;}
+				to { width: 100%;}
+			}
+			@keyframes animated-cursor{
+				from{border-right-color: rgba(0,255,0,.75);}
+				to{border-right-color: transparent;}
+			}
+		</style>
 
-	</style>
+		<head>
+			<meta charset="UTF-8">
+			<link rel="shortcut icon" href="{{ url_for('static', filename='favicon.co') }}">
+			<meta name="viewport" content="width=device-width, initial-scale=1.0">
+			<meta http-equiv="X-UA-Compatible" content="ie=edge">
+			<title>Giorgos Aivatoglou</title>
+		</head>
 
-	<head>
-		<meta charset="UTF-8">
-		<link rel="shortcut icon" href="{{ url_for('static', filename='favicon.co') }}">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	    <title>Giorgos Aivatoglou</title>
-	</head>
-
-	<body>
-		<div class="result" align="center">
-			<form action="{{ url_for('index') }}" method="POST">
-	    		<fieldset>
-	        		<p>Chat</p>
-	        		<input name="sentence" type="text" required  id="ip2">
-	        		<br>
-	        		<br>
-	        		<input type="submit">
-	    		</fieldset>
-			</form>
-
-	    	{% if result %}
-	        	<br> Giorgos:
-	           		<p style="font-size:15px; color:White;">{{ result }}</p>
-	    	{% else %}
-	        	<br> Giorgos:
-	           		<p style="font-size:15px; color:WHite">{{ "Hello!" }}</p>
-	    	{% endif %}
-		</div>
-	</body>
+		<body>
+			<div class="result" align="center">
+				<form action="{{ url_for('index') }}" method="POST">
+					<fieldset>
+						<div> <h1> Ask me anything </h1> </div>
+						<input name="sentence" type="text" required  id="ip2" placeholder="Enter your question" required autocomplete="off">
+					</fieldset>
+				</form>
+				{% if result %}
+					<p style="font-size:26px; color:White;"> {{ result }}</p>
+				{% endif %}
+			</div>
+		</body>
+	</div>
 </html>

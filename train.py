@@ -1,47 +1,11 @@
-import numpy as np
-import random
 import json
-import nltk
 import torch
+import numpy as np
 import torch.nn as nn
 from torch.utils.data import Dataset, DataLoader
-from nltk.stem.porter import PorterStemmer
 
-class ChatNet(nn.Module):
-	def __init__(self, input_size, hidden_size1, hidden_size2, num_classes):
-		super(ChatNet, self).__init__()
-		self.l1 = nn.Linear(input_size, hidden_size1) 
-		self.l2 = nn.Linear(hidden_size1, hidden_size1) 
-		self.l3 = nn.Linear(hidden_size1, hidden_size2)
-		self.l4 = nn.Linear(hidden_size2, num_classes)
-		self.relu = nn.ReLU()
-	
-	def forward(self, x):
-		out = self.l1(x)
-		out = self.relu(out)
-		out = self.l2(out)
-		out = self.relu(out)
-		out = self.l3(out)
-		out = self.relu(out)
-		out = self.l4(out)
-		# no activation and no softmax at the end
-		return out
-
-def tokenize(sentence):
-	return nltk.word_tokenize(sentence)
-
-def stem(word):
-	return stemmer.stem(word.lower())
-
-def bag_of_words(tokenized_sentence, words):
-	sentence_words = [stem(word) for word in tokenized_sentence]
-	bag = np.zeros(len(words), dtype=np.float32)
-	for idx, w in enumerate(words):
-		if w in sentence_words: 
-			bag[idx] = 1
-	return bag
-
-stemmer = PorterStemmer()
+from net import ChatNet
+from helpers import tokenize, stem, bag_of_words
 
 with open('intents.json', 'r') as f:
     intents = json.load(f)
