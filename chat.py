@@ -8,7 +8,7 @@ from net import ChatNet
 from helpers import tokenize, stem, bag_of_words
 
 app = flask.Flask(__name__, template_folder='templates')
-port = int(os.environ.get("PORT", 5001))
+port = int(os.environ.get("PORT", 5000))
 
 with open('intents.json', 'r') as json_data:
 	intents = json.load(json_data)
@@ -32,7 +32,7 @@ def index():
 
 	if flask.request.method == 'GET':
 
-		return(flask.render_template('main.html', original_input="Giorgos", result="Hello!"))
+		return(flask.render_template('main.html', original_input="Giorgos", result="Hello, my name is Giorgos."))
 
 	if flask.request.method == 'POST':
 

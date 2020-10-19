@@ -1,9 +1,14 @@
 {
   "intents": [
     {
-      "tag": "personal",
+      "tag": "personal1",
       "patterns": ["What is your name?", "How you are called?", "Tell me your name", "What is your first name?", "What is your last name?"],
       "responses": ["My name is Giorgos Aivatoglou."]
+    },
+    {
+      "tag": "personal2",
+      "patterns": ["How old are you?", "What is your age?"],
+      "responses": ["I was born in November 1992."]
     },
     {
       "tag": "greeting",
@@ -32,7 +37,7 @@
     },
     {
       "tag": "interests",
-      "patterns": ["What are your interests?", "What is your expertise?", "What are your favorite subjects?"],
+      "patterns": ["What are your interests?", "What is your expertise?", "What are your favorite subjects?", "What are your hobbies?"],
       "responses": ["Machine Learning and Data Science!"]
     },
     {
@@ -42,7 +47,7 @@
     },
     {
       "tag": "email",
-      "patterns": ["What is your email address?"],
+      "patterns": ["What is your email address?", "How can I reach you?"],
       "responses": ["aivagiorgos@gmail.com"]
     }
   ]
