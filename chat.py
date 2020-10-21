@@ -56,7 +56,8 @@ def index():
 					result = random.choice(intent['responses'])
 					return(flask.render_template('main.html', original_input="Giorgos", result=result))
 		else:
-			return(flask.render_template('main.html', original_input="Giorgos", result="I don't understand."))
+			result = ["Can you try asking it a different way?", "I'm not trained for that exact question. Try asking another way?", "I don't understand."]
+			return(flask.render_template('main.html', original_input="Giorgos", result=random.choice(result)))
 
 if __name__ == '__main__':
 

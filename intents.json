@@ -1,44 +1,44 @@
 {
   "intents": [
     {
-      "tag": "personal1",
-      "patterns": ["What is your name?", "How you are called?", "Tell me your name", "What is your first name?", "What is your last name?"],
-      "responses": ["My name is Giorgos Aivatoglou."]
+      "tag": "name",
+      "patterns": ["What is your name?", "How you are called?", "Tell me your name", "What is your first name?", "What is your last name?", "Who are you?", "What is yo name?", "Name?", "What do people call you?", "your name?", "name", "Do you have a name?", "do I know you", "who is your developer?", "who developed you?", "who built you?", "who are you?"],
+      "responses": ["My name is Giorgos.", "Oh sorry, I thought you knew. My name is Giorgos.", "You can call me Giorgos."]
     },
     {
-      "tag": "personal2",
-      "patterns": ["How old are you?", "What is your age?"],
+      "tag": "age",
+      "patterns": ["How old are you?", "What is your age?", "when were you born", "your birth date", "what's your birthday"],
       "responses": ["I was born in November 1992."]
     },
     {
       "tag": "greeting",
-      "patterns": ["Hi", "Hey", "Hello", "Is anyone there?", "Greetings", "What's up", "Sup", "Hello there", "Hi there", "Hey there"],
-      "responses": ["Hey!", "Hello, thanks for visiting!", "Hi!"]
+      "patterns": ["Hi", "Hey", "Hello", "Is anyone there?", "Greetings", "What's up", "Sup", "Hello there", "Hi there", "Hey there", "I greet you"],
+      "responses": ["Hey!", "Hello, thanks for visiting!", "Hi!", "Hi there"]
     },
     {
       "tag": "goodbye",
       "patterns": ["Bye", "See you soon", "Goodbye", "Good night!", "Talk to you later!", "Ciao"],
-      "responses": ["See you later, thanks for visiting!", "Have a nice day", "Bye! Come back again soon."]
+      "responses": ["See you later, thanks for visiting!", "Have a nice day", "Bye! Come back again soon.", "Speak to you soon!"]
     },
     {
       "tag": "thanks",
       "patterns": ["Thanks", "Thank you", "Thank's a lot!", "Thank you very much"],
-      "responses": ["My pleasure."]
+      "responses": ["My pleasure.", "You are welcome."]
     },
     {
       "tag": "education",
       "patterns": ["Tell me about your education", "What is your education?", "University", "College", "School", "Where did you graduate?", "Graduation university", "Bachelor degree", "Master degree"],
-      "responses": ["I'm an Electrical and Computer Engineer with a MSc on Artificial Intelligence."]
+      "responses": ["I have a M.Eng. in Electrical and Computer Engineering and an MSc on Artificial Intelligence."]
     },
     {
       "tag": "work",
-      "patterns": ["Where do you work?", "What do you do for a living?"],
-      "responses": ["Currently I'm working at CERTH as a research software engineer."]
+      "patterns": ["Where do you work?", "What do you do for a living?", "where are you working at"],
+      "responses": ["Currently I'm working at CERTH as a research software engineer.", "I’m an electrical and computer engineer working on the research industry."]
     },
     {
       "tag": "interests",
       "patterns": ["What are your interests?", "What is your expertise?", "What are your favorite subjects?", "What are your hobbies?"],
-      "responses": ["Machine Learning and Data Science!"]
+      "responses": ["Machine Learning and Data Science!", " My expertise includes machine learning, data analysis and backend software engineering."]
     },
     {
       "tag": "location",
@@ -47,8 +47,48 @@
     },
     {
       "tag": "email",
-      "patterns": ["What is your email address?", "How can I reach you?"],
+      "patterns": ["What is your email address?", "How can I reach you?", "email", "e-mail", "mail"],
       "responses": ["aivagiorgos@gmail.com"]
-    }
+    },
+	{
+	  "tag": "intro",
+	  "patterns": ["How are you doing?", "How is your day going?", "You ok?", "How is your day?", "How are you?"],
+	  "responses": ["I'm great thanks for asking!", "I'd say im doing well."]
+	},
+	{
+	  "tag": "experience",
+	  "patterns": ["Do you have any experience?", "experience"],
+	  "responses": ["Yes! I have been working at CERTH since March 2019."]
+	},
+	{
+	  "tag": "certificates",
+	  "patterns": ["Do you have any certificates?", "certificates", "certification", "certified"],
+	  "responses": ["Yes, I have a Data Science certificate issued by the University of Thessaly and a Machine Learning certificate issued by the Stanford University in collaboration with Coursera."]
+	},
+	{
+	  "tag": "skills",
+	  "patterns": ["What are your skills?", "Do you have any skills?", "skills"],
+	  "responses": ["Python, Data Analysis and Machine/Deep Learning!"]
+	},
+	{
+	  "tag": "projects",
+	  "patterns": ["Do you have any projects developed?", "projects", "github", "What is your github profile?"],
+	  "responses": ["Yes, please check my GitHub profile - https://github.com/aivatoglou"]
+	},
+	{
+	  "tag": "linkedin",
+	  "patterns": ["What's your linkedin profile?", "linkedin"],
+	  "responses": ["Here it is - https://www.linkedin.com/in/aivatoglou/"]
+	},
+	{
+	  "tag": "cv",
+	  "patterns": ["Can I see your CV?", "CV", "resume", "curriculum vitae"],
+	  "responses": ["https://www.dropbox.com/s/gxon2ktujbs612w/CV.pdf?dl=0"]
+	},
+	{
+	  "tag": "publications",
+	  "patterns": ["Do you have any publications?", "papers", "thesis"],
+	  "responses": ["Plese check my Google Scholar profile - https://scholar.google.com/citations?user=xbwXOUkAAAAJ&hl=en&oi=ao"]
+	}
   ]
 }
