@@ -3,6 +3,7 @@ import json
 import torch
 import flask
 import random
+from flask import send_from_directory
 
 from net import ChatNet
 from helpers import tokenize, stem, bag_of_words
@@ -58,6 +59,10 @@ def index():
 		else:
 			result = ["Can you try asking it a different way?", "I'm not trained for that exact question. Try asking another way?", "I don't understand."]
 			return(flask.render_template('main.html', original_input="Giorgos", result=random.choice(result)))
+
+@app.route('/favicon.ico')
+def favicon():
+    return send_from_directory(os.path.join(app.root_path, 'static'), 'favicon.ico', mimetype='image/vnd.microsoft.icon')
 
 if __name__ == '__main__':
 
