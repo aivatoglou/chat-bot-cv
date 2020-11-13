@@ -26,16 +26,17 @@
 			#ip2 {
 				color: #fff;
 				padding: 20px;
-				font-size: 26px;
+				font-size: 25px;
 				background: transparent;
 				border: 0;
+				text-align: center;
 			}
 			#ip2:focus {
 				outline: : 0;
 				outline-offset: 0;
 			}
 			h1 {
-			  font-size: 40px;
+			  font-size: 25px;
 			  font-weight: 600;
 			  border: 3px solid #fff;
 			  padding: 10px 20px;
@@ -51,21 +52,9 @@
 				outline:none;
 			}
 			p {
-				overflow: hidden;
-				border-right: solid 3px rgba(0,255,0,.75);
-				white-space: nowrap;
-			}
-			p {
-				animation: animated-text 4s 1s 1 normal both, 
-				animated-cursor 600ms infinite; 
-			}
-			@keyframes animated-text{
-				from { width: 0%;}
-				to { width: 100%;}
-			}
-			@keyframes animated-cursor{
-				from{border-right-color: rgba(0,255,0,.75);}
-				to{border-right-color: transparent;}
+  				color: lime;
+  				font-family: "Courier";
+  				font-size: 20px;
 			}
 		</style>
 
@@ -83,14 +72,15 @@
 					<fieldset>
 						<div> <h1> Chatbot Resume </h1> </div>
 						<input name="sentence" type="text" required  id="ip2" placeholder="Enter your question" required autocomplete="off">
+						<div style="width:350px; text-align:justify; word-break:break-all;">
+							{% if result %}
+								<p> {{ result }} </p>
+							{% endif %}
+						</div>
 					</fieldset>
 				</form>
 			</div>
-			<div>
-				{% if result %}
-					<p style="font-size:26px; color:White;"> {{ result }}</p>
-				{% endif %}
-			</div>
+
 		</body>
 	</div>
 </html>
