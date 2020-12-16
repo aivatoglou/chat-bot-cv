@@ -83,7 +83,7 @@
 	{
 	  "tag": "cv",
 	  "patterns": ["Can I see your CV?", "CV", "resume", "curriculum vitae"],
-	  "responses": ["https://www.dropbox.com/s/gxon2ktujbs612w/CV.pdf?dl=0"]
+	  "responses": ["https://www.dropbox.com/s/lora4nsf6gautg0/CV.pdf?dl=0"]
 	},
 	{
 	  "tag": "publications",
