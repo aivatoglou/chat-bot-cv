@@ -71,9 +71,9 @@
 
 		<body>
 			<div class="result" align="center">
-				<form id="searchForm" action="{{ url_for('index') }}" method="POST">
+				<form action="{{ url_for('index') }}" method="POST" onsubmit="submitForm();return false;>
 					<fieldset>
-						<input id="searchText" name="sentence" type="text" required style="color: #fff; padding: 20px; font-size: 20px; background: transparent; border: 0; text-align: left;" placeholder="Enter your question" required autocomplete="off">
+						<input name="sentence" type="text" required id="ip2" placeholder="Enter your question" required autocomplete="off">
 						<div style="width:100%; text-align:center; word-break:break-all;">
 							{% if result %}
 								<p> {{ result }} </p>
@@ -82,11 +82,9 @@
 					</fieldset>
 				</form>
 			</div>
-			<script type="text/javascript">	
-			document.getElementById('searchForm').addEventListener('submit', function(e) {
-    		search(document.getElementById('searchText'));
-    		e.preventDefault();
-			}, false);
+			<script type="text/javascript">
+				function submitForm()
+				{alert('I might have sent something, somewhere...Perhaps...');}
 			</script>
 		</body>
 	</div>
