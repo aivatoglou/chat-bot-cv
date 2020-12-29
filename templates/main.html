@@ -86,10 +86,9 @@
 		</body>
 	</div>
 	<script type="text/javascript">	
-		$("#searchForm").submit(function() {
-    	search($("#searchText").get(0));
-    	return false;});
-
-    	function search(input) {}
+		document.getElementById('searchForm').addEventListener('submit', function(e) {
+    	search(document.getElementById('searchText'));
+    	e.preventDefault();
+		}, false);
 	</script>
 </html>
