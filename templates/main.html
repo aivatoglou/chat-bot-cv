@@ -71,7 +71,7 @@
 
 		<body>
 			<div class="result" align="center">
-				<form action="{{ url_for('index') }}" method="POST" onsubmit="submitForm();return false;>
+				<form action="{{ url_for('index') }}" method="POST">
 					<fieldset>
 						<input name="sentence" type="text" required id="ip2" placeholder="Enter your question" required autocomplete="off">
 						<div style="width:100%; text-align:center; word-break:break-all;">
@@ -82,10 +82,7 @@
 					</fieldset>
 				</form>
 			</div>
-			<script type="text/javascript">
-				function submitForm()
-				{alert('I might have sent something, somewhere...Perhaps...');}
-			</script>
+
 		</body>
 	</div>
 </html>
