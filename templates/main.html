@@ -71,9 +71,9 @@
 
 		<body>
 			<div class="result" align="center">
-				<form action="{{ url_for('index') }}" method="POST">
+				<form id="searchForm" action="{{ url_for('index') }}" method="POST">
 					<fieldset>
-						<input name="sentence" type="text" required  autofocus id="ip2" placeholder="Enter your question" required autocomplete="off">
+						<input id="searchText" name="sentence" type="text" required style="color: #fff; padding: 20px; font-size: 20px; background: transparent; border: 0; text-align: left;" placeholder="Enter your question" required autocomplete="off">
 						<div style="width:100%; text-align:center; word-break:break-all;">
 							{% if result %}
 								<p> {{ result }} </p>
@@ -85,4 +85,11 @@
 
 		</body>
 	</div>
+	<script type="text/javascript">	
+		$("#searchForm").submit(function() {
+    	search($("#searchText").get(0));
+    	return false;});
+
+    	function search(input) {}
+	</script>
 </html>
