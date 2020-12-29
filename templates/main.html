@@ -82,13 +82,12 @@
 					</fieldset>
 				</form>
 			</div>
-
+			<script type="text/javascript">	
+			document.getElementById('searchForm').addEventListener('submit', function(e) {
+    		search(document.getElementById('searchText'));
+    		e.preventDefault();
+			}, false);
+			</script>
 		</body>
 	</div>
-	<script type="text/javascript">	
-		document.getElementById('searchForm').addEventListener('submit', function(e) {
-    	search(document.getElementById('searchText'));
-    	e.preventDefault();
-		}, false);
-	</script>
 </html>
