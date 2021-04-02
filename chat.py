@@ -39,6 +39,9 @@ def index():
 
 		sentence = flask.request.form['sentence']
 
+		if not sentence:
+			return(flask.render_template('main.html', original_input="Giorgos", result="Hello, my name is Giorgos."))
+
 		sentence = tokenize(sentence)
 		X = bag_of_words(sentence, all_words)
 		X = X.reshape(1, X.shape[0])
