@@ -28,7 +28,7 @@
     {
       "tag": "education",
       "patterns": ["Tell me about your education", "What is your education?", "University", "College", "School", "Where did you graduate?", "Graduation university", "Bachelor degree", "Master degree"],
-      "responses": ["I have a M.Eng. in Electrical and Computer Engineering and an MSc on Artificial Intelligence."]
+      "responses": ["I have a M.Eng. in Electrical and Computer Engineering and an M.Sc. on Artificial Intelligence."]
     },
     {
       "tag": "work",
