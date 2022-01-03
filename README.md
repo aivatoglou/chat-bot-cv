@@ -1,3 +1,3 @@
 # chat-bot-cv
 
-[Live demo link](https://chat-bot-cv.herokuapp.com/)
+[Live demo link](https://chat-bot-cv.herokuapp.com/) deployed @ heroku
